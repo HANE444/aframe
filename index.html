@@ -22,10 +22,11 @@
     <a-plane color="#CCC" height="20" width="20"></a-plane>
   
     <!-- Textured plane parallel to ground. -->
-    <a-plane src="#ground" height="100" width="100" position="0 0.5 0" rotation="-60 0 0"></a-plane>
+    
 
     <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
     <a-marker preset="hiro">
+      <a-plane src="#ground" height="100" width="100" position="0 0.5 0" rotation="-60 0 0"></a-plane>
       <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
       <a-box position="0 0.5 0" wireframe="true"></a-box>
     </a-marker>
