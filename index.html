@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A-Frame で超簡単 AR</title>
+<title>WebAR</title>
 </head>
 <body style="margin:0px; overflow:hidden;">
   <!-- A-Frame ライブラリの読み込み -->
@@ -12,20 +12,17 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   
   <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
-  <a-scene embedded arjs="debugUIEnabled:false;">
-    
+  <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
     <a-assets>
-      <img id="ground" src="mahoroba.jpg">
+      <img id="ground" src="asset/mahoroba.jpg">
     </a-assets>
   
     <!-- Basic plane. -->
     <a-plane color="#CCC" height="20" width="20"></a-plane>
-  
-    <!-- Textured plane parallel to ground. -->
-    
 
     <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
-    <a-marker preset="hiro">
+    <!-- <a-marker preset="hiro"> -->
+      <a-marker type='pattern' url="asset/pattern-S__62627842.patt">
       <a-plane src="#ground" height="1" width="1" position="0 0.5 0" rotation="-90 0 0"></a-plane>
       <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
       <a-box position="0 0.5 0" wireframe="true"></a-box>
